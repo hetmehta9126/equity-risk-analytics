@@ -196,7 +196,10 @@ def build_report(
         "far; the maximum drawdown is the worst of those.",
         "- **Sharpe.** Mean daily excess return divided by its standard "
         "deviation, annualized. **Sortino** replaces the denominator with the "
-        "downside deviation, so only losses count as risk.",
+        "downside deviation, so only losses count as risk. Both use the "
+        "arithmetic mean of daily excess returns, not the compound annual "
+        "growth rate (CAGR), so a positive Sharpe or Sortino does not imply "
+        "CAGR is above the risk-free rate, and the two can disagree in sign.",
         f"- **VaR and CVaR.** Historical method at {level}% confidence: VaR is "
         f"the {100 - level}th percentile of observed daily returns, and CVaR is "
         "the average of the returns at or below it. Both are shown as positive "
